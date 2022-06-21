@@ -1,0 +1,1155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-15">
+<style>
+      .table {
+        background-color:#F5F5FF;
+        border-left:4px solid gray;
+        border-bottom:4px solid gray;
+        border-top:4px solid gray;
+        border-right:4px solid gray;
+        margin-bottom:3em;
+        margin-left:2em;
+        margin-right:2em;
+        padding:1em;
+      }
+      .tableNameHeading h1 {
+          display: inline;
+        font-family: Segoe UI, Arial, sans-serif;
+        font-size:125%;
+        font-weight:bold;
+      }
+        
+      .tableNameHeading h2 {
+        display: inline;
+        font-family: Segoe UI, Arial, sans-serif;
+        font-size:115%;
+        font-weight:normal;
+      }
+      
+      .tableComment { 
+        background-color:#e4efff; margin-bottom:20px;
+      }
+      
+      .tableDefinition { 
+        padding:2px;
+        border-collapse:collapse;
+        margin-top:1em;
+      }
+
+      .tdTableDefinition {
+        padding-right:10px;
+        vertical-align:top;
+        border-top:1px solid #C0C0C0;
+      }
+
+      .tdLogicalColName {
+        width:20em;
+      }
+      
+      .tdPhysicalColName {
+        width:20em;
+      }
+      
+      .tdDataType {
+        width:10em;
+      }
+
+      .tdPkFlag {
+        width:4em;
+      }
+
+      .tdNullFlag {
+        width:9em;
+      }
+
+      .tdTableHeading {
+        padding:2px;
+        font-family: Segoe UI, Arial, sans-serif;
+        font-weight: bold;
+        vertical-align:top;
+        border-bottom: 1px solid #C0C0C0;
+        background-color: rgb(240,240,240);
+      }
+      
+      .subTitle {
+        font-family: Segoe UI, Arial, sans-serif;
+        font-weight: bold;
+      }
+
+      .references {
+      }
+      .comment {
+        color:#666666;
+        margin-left:3em;
+        padding:0.25em;
+      }
+    </style>
+<title>PROJETO_LOGICO_BANCO</title>
+</head>
+<body>
+<center>
+<h2>PROJETO_LOGICO_BANCO</h2>
+</center>
+<h3>List of tables</h3>
+<ul>
+<li>
+<a href="#agencias">agencias</a>
+</li>
+<li>
+<a href="#bancos">bancos</a>
+</li>
+<li>
+<a href="#clientes">clientes</a>
+</li>
+<li>
+<a href="#contas">contas</a>
+</li>
+<li>
+<a href="#contratos">contratos</a>
+</li>
+<li>
+<a href="#dias_trabalho">dias_trabalho</a>
+</li>
+<li>
+<a href="#empregados">empregados</a>
+</li>
+<li>
+<a href="#emprestimos">emprestimos</a>
+</li>
+<li>
+<a href="#endereco">endereco</a>
+</li>
+<li>
+<a href="#endereco_agencia">endereco_agencia</a>
+</li>
+<li>
+<a href="#endereco_cliente">endereco_cliente</a>
+</li>
+<li>
+<a href="#endereco_empregados">endereco_empregados</a>
+</li>
+<li>
+<a href="#gerenciam">gerenciam</a>
+</li>
+<li>
+<a href="#historico">historico</a>
+</li>
+<li>
+<a href="#lota%C3%A7%C3%B5es">lota&ccedil;&otilde;es</a>
+</li>
+<li>
+<a href="#oferecem">oferecem</a>
+</li>
+<li>
+<a href="#parcelas">parcelas</a>
+</li>
+<li>
+<a href="#servicos">servicos</a>
+</li>
+<li>
+<a href="#telefone_agencia">telefone_agencia</a>
+</li>
+<li>
+<a href="#telefone_banco">telefone_banco</a>
+</li>
+<li>
+<a href="#telefone_empregados">telefone_empregados</a>
+</li>
+</ul>
+<div class="tableNameHeading">
+<h1>agencias<a name="agencias"></a>
+</h1>
+<h2>
+      (Physical Name: agencias)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">numero_banco (PK)
+                &nbsp;(<a href="#bancos">FK</a>)
+              </td><td class="tdTableDefinition">numero_banco</td><td class="tdTableDefinition">DECIMAL(5,0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">numero do banco</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">numero_agencia (PK)</td><td class="tdTableDefinition">numero_agencia</td><td class="tdTableDefinition">DECIMAL(3,0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">cnpj (PK)
+                &nbsp;(<a href="#bancos">FK</a>)
+              </td><td class="tdTableDefinition">cnpj</td><td class="tdTableDefinition">CHAR</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Cnpj</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">nome</td><td class="tdTableDefinition">nome</td><td class="tdTableDefinition">VARCHAR(100)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#bancos">bancos</a> through (numero_banco, cnpj)</li>
+</ul>
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#endereco_agencia">endereco_agencia</a> referencing (numero_banco, numero_agencia)</li>
+<li>
+<a href="#telefone_agencia">telefone_agencia</a> referencing (numero_banco, numero_agencia)</li>
+<li>
+<a href="#lota%C3%A7%C3%B5es">lota&ccedil;&otilde;es</a> referencing (numero_banco, numero_agencia, cnpj)</li>
+<li>
+<a href="#oferecem">oferecem</a> referencing (numero_banco, numero_agencia, cnpj)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>bancos<a name="bancos"></a>
+</h1>
+<h2>
+      (Physical Name: bancos)
+      </h2>
+<p class="comment">tabela bancos</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">numero_banco (PK)</td><td class="tdTableDefinition">numero_banco</td><td class="tdTableDefinition">DECIMAL(5,0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Numero do banco</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">cnpj (PK)</td><td class="tdTableDefinition">cnpj</td><td class="tdTableDefinition">CHAR</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Cnpj</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">site</td><td class="tdTableDefinition">site</td><td class="tdTableDefinition">VARCHAR(100)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">site do banco</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">razao_social</td><td class="tdTableDefinition">razao_social</td><td class="tdTableDefinition">VARCHAR(150)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Nome da razao social do banco</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#endereco">endereco</a> referencing (numero_banco, cnpj)</li>
+<li>
+<a href="#telefone_banco">telefone_banco</a> referencing (numero_banco, cnpj)</li>
+<li>
+<a href="#agencias">agencias</a> referencing (numero_banco, cnpj)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>clientes<a name="clientes"></a>
+</h1>
+<h2>
+      (Physical Name: clientes)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">codigo_cliente (PK)</td><td class="tdTableDefinition">codigo_cliente</td><td class="tdTableDefinition">CHAR</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">estado_civil</td><td class="tdTableDefinition">estado_civil</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">nome</td><td class="tdTableDefinition">nome</td><td class="tdTableDefinition">VARCHAR(100)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">nome</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">data_nascimento</td><td class="tdTableDefinition">data_nascimento</td><td class="tdTableDefinition">DATE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">data</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">sexo</td><td class="tdTableDefinition">sexo</td><td class="tdTableDefinition">CHAR</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">f or m</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#endereco_cliente">endereco_cliente</a> referencing (codigo_cliente)</li>
+<li>
+<a href="#servicos">servicos</a> referencing (codigo_cliente)</li>
+<li>
+<a href="#emprestimos">emprestimos</a> referencing (codigo_cliente)</li>
+<li>
+<a href="#contas">contas</a> referencing (codigo_cliente)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>contas<a name="contas"></a>
+</h1>
+<h2>
+      (Physical Name: contas)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">numero_conta (PK)</td><td class="tdTableDefinition">numero_conta</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">codigo_cliente (PK)
+                &nbsp;(<a href="#clientes">FK</a>)
+              </td><td class="tdTableDefinition">codigo_cliente</td><td class="tdTableDefinition">CHAR</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">saldo</td><td class="tdTableDefinition">saldo</td><td class="tdTableDefinition">CHAR</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">limite_credito</td><td class="tdTableDefinition">limite_credito</td><td class="tdTableDefinition">CHAR</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">senha</td><td class="tdTableDefinition">senha</td><td class="tdTableDefinition">VARCHAR(100)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">data_abertura</td><td class="tdTableDefinition">data_abertura</td><td class="tdTableDefinition">DATE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#clientes">clientes</a> through (codigo_cliente)</li>
+</ul>
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#historico">historico</a> referencing (numero_conta)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>contratos<a name="contratos"></a>
+</h1>
+<h2>
+      (Physical Name: contratos)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">numero_contrato (PK)</td><td class="tdTableDefinition">numero_contrato</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">codigo_servicos (PK)
+                &nbsp;(<a href="#servicos">FK</a>)
+              </td><td class="tdTableDefinition">codigo_servicos</td><td class="tdTableDefinition">CHAR</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">descricao_responsabilidade_contratada</td><td class="tdTableDefinition">descricao_responsabilidade_contratada</td><td class="tdTableDefinition">VARCHAR(200)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">descricao_responsabilidades_contratante</td><td class="tdTableDefinition">descricao_responsabilidades_contratante</td><td class="tdTableDefinition">VARCHAR(200)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">data_assinatura</td><td class="tdTableDefinition">data_assinatura</td><td class="tdTableDefinition">DATE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#servicos">servicos</a> through (codigo_servicos)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>dias_trabalho<a name="dias_trabalho"></a>
+</h1>
+<h2>
+      (Physical Name: dias_trabalho)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">dias_de_trabalho</td><td class="tdTableDefinition">dias_de_trabalho</td><td class="tdTableDefinition">DATE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">horarios</td><td class="tdTableDefinition">horarios</td><td class="tdTableDefinition">TIME</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#lota%C3%A7%C3%B5es">lota&ccedil;&otilde;es</a> through ()</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>empregados<a name="empregados"></a>
+</h1>
+<h2>
+      (Physical Name: empregados)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">matricula (PK)
+                &nbsp;(<a href="#gerenciam">FK</a>)
+              </td><td class="tdTableDefinition">matricula</td><td class="tdTableDefinition">CHAR</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">nome</td><td class="tdTableDefinition">nome</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">cargo</td><td class="tdTableDefinition">cargo</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">salario</td><td class="tdTableDefinition">salario</td><td class="tdTableDefinition">DECIMAL(6,2)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#gerenciam">gerenciam</a> through (matricula)</li>
+</ul>
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#endereco_empregados">endereco_empregados</a> referencing (matricula)</li>
+<li>
+<a href="#telefone_empregados">telefone_empregados</a> referencing (matricula)</li>
+<li>
+<a href="#lota%C3%A7%C3%B5es">lota&ccedil;&otilde;es</a> referencing (matricula)</li>
+<li>
+<a href="#gerenciam">gerenciam</a> referencing (matricula)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>emprestimos<a name="emprestimos"></a>
+</h1>
+<h2>
+      (Physical Name: emprestimos)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">codigo_emprestimo (PK)</td><td class="tdTableDefinition">codigo_emprestimo</td><td class="tdTableDefinition">CHAR</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">codigo_cliente (PK)
+                &nbsp;(<a href="#clientes">FK</a>)
+              </td><td class="tdTableDefinition">codigo_cliente</td><td class="tdTableDefinition">CHAR</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">data_aquisicao</td><td class="tdTableDefinition">data_aquisicao</td><td class="tdTableDefinition">DATE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">valor</td><td class="tdTableDefinition">valor</td><td class="tdTableDefinition">DECIMAL(6,2)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#clientes">clientes</a> through (codigo_cliente)</li>
+</ul>
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#parcelas">parcelas</a> referencing (codigo_emprestimo, codigo_cliente)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>endereco<a name="endereco"></a>
+</h1>
+<h2>
+      (Physical Name: endereco)
+      </h2>
+<p class="comment">endere&ccedil;o</p>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">numero_banco (PK)
+                &nbsp;(<a href="#bancos">FK</a>)
+              </td><td class="tdTableDefinition">numero_banco</td><td class="tdTableDefinition">DECIMAL(5,0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Numero do banco</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">cnpj (PK)
+                &nbsp;(<a href="#bancos">FK</a>)
+              </td><td class="tdTableDefinition">cnpj</td><td class="tdTableDefinition">CHAR</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Cnpj</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">logradouro</td><td class="tdTableDefinition">logradouro</td><td class="tdTableDefinition">VARCHAR(100)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">uf</td><td class="tdTableDefinition">uf</td><td class="tdTableDefinition">CHAR</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">complemento</td><td class="tdTableDefinition">complemento</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">bairro</td><td class="tdTableDefinition">bairro</td><td class="tdTableDefinition">VARCHAR(100)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">bairro</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">cidade</td><td class="tdTableDefinition">cidade</td><td class="tdTableDefinition">VARCHAR(100)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">cidade</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">cep</td><td class="tdTableDefinition">cep</td><td class="tdTableDefinition">VARCHAR(8)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">numero</td><td class="tdTableDefinition">numero</td><td class="tdTableDefinition">DECIMAL(3,0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">numero da rua</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#bancos">bancos</a> through (numero_banco, cnpj)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>endereco_agencia<a name="endereco_agencia"></a>
+</h1>
+<h2>
+      (Physical Name: endereco_agencia)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">numero_banco (PK)
+                &nbsp;(<a href="#agencias">FK</a>)
+              </td><td class="tdTableDefinition">numero_banco</td><td class="tdTableDefinition">DECIMAL(5,0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">numero do banco</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">numero_agencia (PK)
+                &nbsp;(<a href="#agencias">FK</a>)
+              </td><td class="tdTableDefinition">numero_agencia</td><td class="tdTableDefinition">DECIMAL(3,0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">logradouro</td><td class="tdTableDefinition">logradouro</td><td class="tdTableDefinition">VARCHAR(100)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">uf</td><td class="tdTableDefinition">uf</td><td class="tdTableDefinition">CHAR</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">complemento</td><td class="tdTableDefinition">complemento</td><td class="tdTableDefinition">VARCHAR(100)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">cep</td><td class="tdTableDefinition">cep</td><td class="tdTableDefinition">VARCHAR(8)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">cidade</td><td class="tdTableDefinition">cidade</td><td class="tdTableDefinition">VARCHAR(100)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">bairro</td><td class="tdTableDefinition">bairro</td><td class="tdTableDefinition">VARCHAR(100)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#agencias">agencias</a> through (numero_banco, numero_agencia)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>endereco_cliente<a name="endereco_cliente"></a>
+</h1>
+<h2>
+      (Physical Name: endereco_cliente)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">codigo_cliente (PK)
+                &nbsp;(<a href="#clientes">FK</a>)
+              </td><td class="tdTableDefinition">codigo_cliente</td><td class="tdTableDefinition">CHAR</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">logradouro</td><td class="tdTableDefinition">logradouro</td><td class="tdTableDefinition">VARCHAR(100)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">bairro</td><td class="tdTableDefinition">bairro</td><td class="tdTableDefinition">VARCHAR(100)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">uf</td><td class="tdTableDefinition">uf</td><td class="tdTableDefinition">CHAR</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">complemento</td><td class="tdTableDefinition">complemento</td><td class="tdTableDefinition">VARCHAR(200)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">cep</td><td class="tdTableDefinition">cep</td><td class="tdTableDefinition">VARCHAR(14)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">cidade</td><td class="tdTableDefinition">cidade</td><td class="tdTableDefinition">VARCHAR(100)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#clientes">clientes</a> through (codigo_cliente)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>endereco_empregados<a name="endereco_empregados"></a>
+</h1>
+<h2>
+      (Physical Name: endereco_empregados)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">matricula (PK)
+                &nbsp;(<a href="#empregados">FK</a>)
+              </td><td class="tdTableDefinition">matricula</td><td class="tdTableDefinition">CHAR</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">logradouro</td><td class="tdTableDefinition">logradouro</td><td class="tdTableDefinition">VARCHAR(100)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">cidade</td><td class="tdTableDefinition">cidade</td><td class="tdTableDefinition">VARCHAR(100)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">complemento</td><td class="tdTableDefinition">complemento</td><td class="tdTableDefinition">VARCHAR(100)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">bairro</td><td class="tdTableDefinition">bairro</td><td class="tdTableDefinition">VARCHAR(100)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">uf</td><td class="tdTableDefinition">uf</td><td class="tdTableDefinition">CHAR</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">cep</td><td class="tdTableDefinition">cep</td><td class="tdTableDefinition">VARCHAR(8)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#empregados">empregados</a> through (matricula)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>gerenciam<a name="gerenciam"></a>
+</h1>
+<h2>
+      (Physical Name: gerenciam)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">matricula (PK)
+                &nbsp;(<a href="#empregados">FK</a>)
+              </td><td class="tdTableDefinition">matricula</td><td class="tdTableDefinition">CHAR</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#empregados">empregados</a> through (matricula)</li>
+</ul>
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#empregados">empregados</a> referencing (matricula)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>historico<a name="historico"></a>
+</h1>
+<h2>
+      (Physical Name: historico)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">codigo_servicos (PK)
+                &nbsp;(<a href="#servicos">FK</a>)
+              </td><td class="tdTableDefinition">codigo_servicos</td><td class="tdTableDefinition">CHAR</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">numero_conta (PK)
+                &nbsp;(<a href="#contas">FK</a>)
+              </td><td class="tdTableDefinition">numero_conta</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#servicos">servicos</a> through (codigo_servicos)</li>
+<li>
+<a href="#contas">contas</a> through (numero_conta)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>lota&ccedil;&otilde;es<a name="lota%C3%A7%C3%B5es"></a>
+</h1>
+<h2>
+      (Physical Name: lota&ccedil;&otilde;es)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">matricula (PK)
+                &nbsp;(<a href="#empregados">FK</a>)
+              </td><td class="tdTableDefinition">matricula</td><td class="tdTableDefinition">CHAR</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">numero_banco (PK)
+                &nbsp;(<a href="#agencias">FK</a>)
+              </td><td class="tdTableDefinition">numero_banco</td><td class="tdTableDefinition">DECIMAL(5,0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">numero do banco</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">numero_agencia (PK)
+                &nbsp;(<a href="#agencias">FK</a>)
+              </td><td class="tdTableDefinition">numero_agencia</td><td class="tdTableDefinition">DECIMAL(3,0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">cnpj (PK)
+                &nbsp;(<a href="#agencias">FK</a>)
+              </td><td class="tdTableDefinition">cnpj</td><td class="tdTableDefinition">CHAR</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Cnpj</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">fun&ccedil;&atilde;o</td><td class="tdTableDefinition">fun&ccedil;&atilde;o</td><td class="tdTableDefinition">VARCHAR(100)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#agencias">agencias</a> through (numero_banco, numero_agencia, cnpj)</li>
+<li>
+<a href="#empregados">empregados</a> through (matricula)</li>
+</ul>
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#dias_trabalho">dias_trabalho</a> referencing ()</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>oferecem<a name="oferecem"></a>
+</h1>
+<h2>
+      (Physical Name: oferecem)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">codigo_servicos (PK)
+                &nbsp;(<a href="#servicos">FK</a>)
+              </td><td class="tdTableDefinition">codigo_servicos</td><td class="tdTableDefinition">CHAR</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">numero_banco (PK)
+                &nbsp;(<a href="#agencias">FK</a>)
+              </td><td class="tdTableDefinition">numero_banco</td><td class="tdTableDefinition">DECIMAL(5,0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">numero do banco</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">numero_agencia (PK)
+                &nbsp;(<a href="#agencias">FK</a>)
+              </td><td class="tdTableDefinition">numero_agencia</td><td class="tdTableDefinition">DECIMAL(3,0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">cnpj (PK)
+                &nbsp;(<a href="#agencias">FK</a>)
+              </td><td class="tdTableDefinition">cnpj</td><td class="tdTableDefinition">CHAR</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Cnpj</div>
+</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#agencias">agencias</a> through (numero_banco, numero_agencia, cnpj)</li>
+<li>
+<a href="#servicos">servicos</a> through (codigo_servicos)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>parcelas<a name="parcelas"></a>
+</h1>
+<h2>
+      (Physical Name: parcelas)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">codigo_emprestimo (PK)
+                &nbsp;(<a href="#emprestimos">FK</a>)
+              </td><td class="tdTableDefinition">codigo_emprestimo</td><td class="tdTableDefinition">CHAR</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">numero_parcela (PK)</td><td class="tdTableDefinition">numero_parcela</td><td class="tdTableDefinition">CHAR</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">codigo_cliente (PK)
+                &nbsp;(<a href="#emprestimos">FK</a>)
+              </td><td class="tdTableDefinition">codigo_cliente</td><td class="tdTableDefinition">CHAR</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">valor_juros</td><td class="tdTableDefinition">valor_juros</td><td class="tdTableDefinition">DECIMAL(6,2)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">data_vencimento</td><td class="tdTableDefinition">data_vencimento</td><td class="tdTableDefinition">DATE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">data_pagamento</td><td class="tdTableDefinition">data_pagamento</td><td class="tdTableDefinition">DECIMAL(0,0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">valor</td><td class="tdTableDefinition">valor</td><td class="tdTableDefinition">DECIMAL(6,2)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#emprestimos">emprestimos</a> through (codigo_emprestimo, codigo_cliente)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>servicos<a name="servicos"></a>
+</h1>
+<h2>
+      (Physical Name: servicos)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">codigo_servicos (PK)</td><td class="tdTableDefinition">codigo_servicos</td><td class="tdTableDefinition">CHAR</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">codigo_cliente (PK)
+                &nbsp;(<a href="#clientes">FK</a>)
+              </td><td class="tdTableDefinition">codigo_cliente</td><td class="tdTableDefinition">CHAR</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">descri&ccedil;&atilde;o</td><td class="tdTableDefinition">descri&ccedil;&atilde;o</td><td class="tdTableDefinition">VARCHAR(100)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">descri&ccedil;&atilde;o</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">data_inicio_vigencia</td><td class="tdTableDefinition">data_inicio_vigencia</td><td class="tdTableDefinition">DATE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">data_fim_vigencia</td><td class="tdTableDefinition">data_fim_vigencia</td><td class="tdTableDefinition">DATE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">valor_minimo</td><td class="tdTableDefinition">valor_minimo</td><td class="tdTableDefinition">DECIMAL(6,2)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">nome</td><td class="tdTableDefinition">nome</td><td class="tdTableDefinition">VARCHAR(100)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#clientes">clientes</a> through (codigo_cliente)</li>
+</ul>
+<p class="subTitle">Referenced By</p>
+<ul>
+<li>
+<a href="#oferecem">oferecem</a> referencing (codigo_servicos)</li>
+<li>
+<a href="#contratos">contratos</a> referencing (codigo_servicos)</li>
+<li>
+<a href="#historico">historico</a> referencing (codigo_servicos)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>telefone_agencia<a name="telefone_agencia"></a>
+</h1>
+<h2>
+      (Physical Name: telefone_agencia)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">numero_agencia (PK)
+                &nbsp;(<a href="#agencias">FK</a>)
+              </td><td class="tdTableDefinition">numero_agencia</td><td class="tdTableDefinition">DECIMAL(3,0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">numero_banco (PK)
+                &nbsp;(<a href="#agencias">FK</a>)
+              </td><td class="tdTableDefinition">numero_banco</td><td class="tdTableDefinition">DECIMAL(5,0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">numero do banco</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">telefone</td><td class="tdTableDefinition">telefone</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">tipo</td><td class="tdTableDefinition">tipo</td><td class="tdTableDefinition">VARCHAR(100)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#agencias">agencias</a> through (numero_banco, numero_agencia)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>telefone_banco<a name="telefone_banco"></a>
+</h1>
+<h2>
+      (Physical Name: telefone_banco)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">numero_banco (PK)
+                &nbsp;(<a href="#bancos">FK</a>)
+              </td><td class="tdTableDefinition">numero_banco</td><td class="tdTableDefinition">DECIMAL(5,0)</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Numero do banco</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">cnpj (PK)
+                &nbsp;(<a href="#bancos">FK</a>)
+              </td><td class="tdTableDefinition">cnpj</td><td class="tdTableDefinition">CHAR</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr>
+<td colspan="4">
+<div class="comment">Cnpj</div>
+</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">telefone</td><td class="tdTableDefinition">telefone</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">tipo</td><td class="tdTableDefinition">tipo</td><td class="tdTableDefinition">VARCHAR(100)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#bancos">bancos</a> through (numero_banco, cnpj)</li>
+</ul>
+</div>
+</div>
+<div class="tableNameHeading">
+<h1>telefone_empregados<a name="telefone_empregados"></a>
+</h1>
+<h2>
+      (Physical Name: telefone_empregados)
+      </h2>
+</div>
+<div class="table">
+<table class="tableDefinition" width="100%">
+<tr>
+<td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">matricula (PK)
+                &nbsp;(<a href="#empregados">FK</a>)
+              </td><td class="tdTableDefinition">matricula</td><td class="tdTableDefinition">CHAR</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">telefone</td><td class="tdTableDefinition">telefone</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">tipo</td><td class="tdTableDefinition">tipo</td><td class="tdTableDefinition">VARCHAR(0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+</table>
+<div class="references">
+<p class="subTitle">References</p>
+<ul>
+<li>
+<a href="#empregados">empregados</a> through (matricula)</li>
+</ul>
+</div>
+</div>
+</body>
+</html>
